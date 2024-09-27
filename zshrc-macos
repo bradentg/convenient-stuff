@@ -40,6 +40,7 @@ alias zshconfig="vim ~/.zshrc"
 alias rezsh="source ~/.zshrc"
 alias sp=spotify
 alias code="/Applications/Visual\ Studio\ Code.app/contents/Resources/app/bin/code"
+alias preview="open -a Preview.app"
 
 # git aliases
 alias gs="git status"
