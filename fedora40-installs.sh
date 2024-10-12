@@ -17,8 +17,11 @@ sudo dnf install code # or code-insiders
 curl -fsSL https://rpm.librewolf.net/librewolf-repo.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
 sudo dnf install librewolf
 
-# Other apps
+# Other stuff
+sudo dnf install vim
+sudo dnf install neovim
 sudo dnf install discord
+sudo dnf install zsh
 
 # Install Flatpak and enable remote
 sudo dnf install -y flatpak
