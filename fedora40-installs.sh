@@ -24,6 +24,11 @@ sudo dnf install openrazer-meta
 sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/hardware:razer/Fedora_40/hardware:razer.repo
 sudo dnf install razergenie
 
+# GitHub CLI
+sudo dnf install 'dnf-command(config-manager)'
+sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+sudo dnf install gh --repo gh-cli
+
 # Other stuff
 sudo dnf install vim
 sudo dnf install neovim
