@@ -17,6 +17,13 @@ sudo dnf install code # or code-insiders
 curl -fsSL https://rpm.librewolf.net/librewolf-repo.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
 sudo dnf install librewolf
 
+# OpenRazer (Driver) and RazerGenie (GUI)
+sudo dnf install kernel-devel
+sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/hardware:/razer/Fedora_$(rpm -E %fedora)/hardware:razer.repo
+sudo dnf install openrazer-meta
+sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/hardware:razer/Fedora_40/hardware:razer.repo
+sudo dnf install razergenie
+
 # Other stuff
 sudo dnf install vim
 sudo dnf install neovim
@@ -29,4 +36,5 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 # Install flatpak software
 flatpak install flathub com.spotify.Client
+flatpak install flathub md.obsidian.Obsidian
 
