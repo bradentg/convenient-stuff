@@ -1,3 +1,7 @@
+# NOTE:
+# Run 'sudo dnf update -y' and then reboot
+# before running script
+
 # RPM Fusion Configuration
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf config-manager --enable fedora-cisco-openh264
@@ -6,6 +10,10 @@ sudo dnf update @core
 # Multimedia setup
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 sudo dnf group install Multimedia
+
+# NVIDIA Drivers
+sudo dnf install akmod-nvidia
+sudo dnf install xorg-x11-drv-nvidia-cuda
 
 # VS Code
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -33,6 +41,14 @@ sudo dnf install gh --repo gh-cli
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf config-manager --enable fedora-cisco-openh264 -y
 sudo dnf install steam -y
+
+# GameMode + dependencies
+sudo dnf install meson systemd-devel pkg-config git dbus-devel
+cd ~ && mkdir dev && cd dev
+git clone https://github.com/FeralInteractive/gamemode.git
+cd gamemode && git checkout 1.8.2 && ./bootstrap.sh
+sudo usermod -aG gamemode $(whoami)
+gamemoded -t && cd ~
 
 # Other stuff
 sudo dnf install vim
