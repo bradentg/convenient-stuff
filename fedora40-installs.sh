@@ -50,6 +50,13 @@ cd gamemode && git checkout 1.8.2 && ./bootstrap.sh
 sudo usermod -aG gamemode $(whoami)
 gamemoded -t && cd ~
 
+# Wine, Lutris, dependencies
+sudo dnf groupinstall "C Development Tools and Libraries"
+sudo dnf groupinstall "Development Tools"
+sudo dnf install wine
+sudo dnf install winetricks
+sudo dnf install lutris
+
 # Other stuff
 sudo dnf install vim
 sudo dnf install neovim
