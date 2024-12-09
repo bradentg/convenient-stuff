@@ -3,6 +3,10 @@ sudo apt update
 sudo apt install neovim
 sudo apt install gimp
 sudo apt-get install gparted
+sudo apt install gamemode
+sudo apt install nodejs
+sudo apt install npm
+sudo apt install timeshift
 
 # Temurin 21 JDK
 sudo apt install -y wget apt-transport-https gpg
@@ -11,19 +15,15 @@ echo "deb https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_COD
 sudo apt update
 sudo apt install temurin-21-jdk
 
+# Minecraft and Prism Launcher
+flatpak install flathub org.prismlauncher.PrismLauncher
+
 # Signal
 wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
 cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
   sudo tee /etc/apt/sources.list.d/signal-xenial.list
 sudo apt update && sudo apt install signal-desktop
-
-# Timeshift
-sudo apt install timeshift
-
-# Node and NPM
-sudo apt install nodejs
-sudo apt install npm
 
 # Spotify
 curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
