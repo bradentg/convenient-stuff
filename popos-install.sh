@@ -10,7 +10,6 @@ sudo apt install timeshift
 # Gaming
 sudo apt install gamemode
 sudo apt install mangohud
-flatpak install flathub org.prismlauncher.PrismLauncher
 
 # Temurin 21 JDK
 sudo apt install -y wget apt-transport-https gpg
@@ -35,6 +34,8 @@ sudo apt-get update && sudo apt-get install spotify-client
 sudo apt install flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub md.obsidian.Obsidian
+flatpak install flathub org.prismlauncher.PrismLauncher
+flatpak install flathub com.discordapp.Discord
 
 # zsh
 sudo apt install zsh
