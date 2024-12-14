@@ -11,6 +11,14 @@ sudo apt install timeshift
 sudo apt install gamemode
 sudo apt install mangohud
 
+# winehq-stable for Ubuntu 22.04 (jammy)
+sudo dpkg --add-architecture i386
+sudo mkdir -pm755 /etc/apt/keyrings
+wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
+sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
+sudo apt update
+sudo apt install --install-recommends winehq-stable
+
 # Temurin 21 JDK
 sudo apt install -y wget apt-transport-https gpg
 wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null
@@ -36,6 +44,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 flatpak install flathub md.obsidian.Obsidian
 flatpak install flathub org.prismlauncher.PrismLauncher
 flatpak install flathub com.discordapp.Discord
+flatpak install flathub org.freac.freac
 
 # zsh
 sudo apt install zsh
