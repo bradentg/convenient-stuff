@@ -13,6 +13,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 sudo apt install neovim
 sudo apt install nodejs
 sudo apt install npm
+sudo apt install neofetch
 
 # --- GitHub CLI
 (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
@@ -69,6 +70,7 @@ sudo apt-get update && sudo apt-get install spotify-client
 sudo apt-get install gparted
 sudo apt install timeshift
 flatpak install flathub md.obsidian.Obsidian
+flatpak install flathub org.onlyoffice.desktopeditors
 
 # --- Signal
 wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
