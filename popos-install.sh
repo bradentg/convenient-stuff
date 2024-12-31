@@ -32,6 +32,12 @@ echo "deb https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_COD
 sudo apt update
 sudo apt install temurin-21-jdk
 
+# --- PyEnv and Python Build Dependencies
+sudo apt install build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev curl \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+curl https://pyenv.run | bash
+
 ##############
 ### Gaming ###
 ##############
@@ -69,6 +75,7 @@ sudo apt-get update && sudo apt-get install spotify-client
 
 sudo apt-get install gparted
 sudo apt install timeshift
+sudo apt install lm-sensors
 flatpak install flathub md.obsidian.Obsidian
 flatpak install flathub org.onlyoffice.desktopeditors
 
@@ -85,3 +92,11 @@ sudo apt update && sudo apt install signal-desktop
 sudo apt install zsh
 zsh --version
 chsh -s $(which zsh)
+
+cat << 'END_SCRIPT'
+Set up shell environment for pyenv by adding the following to .zshrc:
+
+export PYENV_ROOT='$HOME/.pyenv'  
+[[ -d $PYENV_ROOT/bin ]] && export PATH='$PYENV_ROOT/bin:$PATH'  
+eval '$(pyenv init - zsh)'  
+END_SCRIPT
