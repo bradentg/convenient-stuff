@@ -63,6 +63,7 @@ sudo apt install --install-recommends winehq-stable
 sudo apt install picard
 sudo apt install gimp
 flatpak install flathub org.freac.freac
+flatpak install flathub tv.plex.PlexDesktop
 
 # --- Spotify
 curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
