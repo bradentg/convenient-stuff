@@ -63,6 +63,7 @@ sudo apt install --install-recommends winehq-stable
 sudo apt install picard
 sudo apt install gimp
 sudo apt install ffmpeg
+sudo apt install vlc
 flatpak install flathub org.freac.freac
 flatpak install flathub tv.plex.PlexDesktop
 
