@@ -89,6 +89,14 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
   sudo tee /etc/apt/sources.list.d/signal-xenial.list
 sudo apt update && sudo apt install signal-desktop
 
+# --- ProtonVPN
+wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.6_all.deb
+sudo dpkg -i ./protonvpn-stable-release_1.0.6_all.deb && sudo apt update
+sudo apt install proton-vpn-gnome-desktop
+
+# --- GNOME Tray Icons
+sudo apt install libayatana-appindicator3-1 gir1.2-ayatanaappindicator3-0.1 gnome-shell-extension-appindicator
+
 ###############################
 
 # zsh
