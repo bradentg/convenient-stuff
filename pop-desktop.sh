@@ -72,6 +72,9 @@ sudo add-apt-repository ppa:openshot.developers/ppa
 sudo apt update
 sudo apt install openshot-qt python3-openshot
 
+# --- Calibre
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+
 # --- Spotify
 curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
