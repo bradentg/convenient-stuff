@@ -87,6 +87,7 @@ sudo apt update && sudo apt install spotify-client
 sudo apt-get install gparted
 sudo apt install timeshift
 sudo apt install lm-sensors
+sudo apt install gnome-boxes
 flatpak install flathub md.obsidian.Obsidian
 flatpak install flathub org.onlyoffice.desktopeditors
 
